@@ -1,0 +1,36 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "production": "forever server/index.js",
+    "build-dev": "webpack -d --watch",
+    "build-prod": "webpack -d",
+    "seed": "node database/seed.js",
+    "schema": "node database/models.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.19.0",
+    "css-loader": "^3.2.0",
+    "express": "^4.16.4",
+    "express-rate-limit": "^5.0.0",
+    "faker": "^4.1.0",
+    "forever": "^1.0.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4",
+    "pg": "^7.12.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "style-loader": "^0.23.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "private": true
+}

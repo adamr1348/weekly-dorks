@@ -3,7 +3,7 @@ const db = require('./index.js');
 
 db
     .query(
-        'CREATE TABLE IF NOT EXISTS emails(\
+        'CREATE TABLE IF NOT EXISTS subs(\
         id serial PRIMARY KEY,\
         name VARCHAR (25) UNIQUE,\
         endpoint VARCHAR (25) UNIQUE)')

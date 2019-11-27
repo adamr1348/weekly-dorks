@@ -1,7 +1,7 @@
 const db = require('./index.js');
 
 
-function createSub (subName, type) {
+function createSub (subName) {
     let endpointName = subName.split(' ').join('-').toLowerCase();
     db
         .query(`

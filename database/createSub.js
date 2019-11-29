@@ -35,6 +35,4 @@ function createSub (subName, res) {
         })
 }
 
-createSub('Works once');
-
 module.exports = createSub;

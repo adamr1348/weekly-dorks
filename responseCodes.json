@@ -1,0 +1,5 @@
+{
+    "1": "Successfully created sub",
+    "-1": "Sub name already exists",
+    "-2": "Unknown error creating sub"
+}

@@ -5,7 +5,7 @@
     "production": "forever server/index.js",
     "build-dev": "webpack -d --watch",
     "build-prod": "webpack -d",
-    "seed": "node database/seed.js",
+    "seed": "node database/seedFunctions/seedAll.js",
     "schema": "node database/models.js"
   },
   "dependencies": {

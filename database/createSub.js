@@ -1,5 +1,6 @@
-const db = require('./index.js');
-const resCodes = require('../responseCodes.json');
+const db        = require('./index.js');
+const resCodes  = require('../responseCodes.json');
+const formatter = require('../server/responseFormatter.js');
 
 
 function createSub (subName, res) {
@@ -19,16 +20,16 @@ function createSub (subName, res) {
         .then(data => {
             db.end();
             if (res) {
-                res.send(resCodes["1"])
+                res.send(formatter(1));
             }
         })
         .catch(err => {
             db.end();
             if (res) {
                 if (err.constraint === 'subs_name_key') {
-                    resCodes["-1"];
+                    res.send(formatter(-1));
                 } else {
-                    resCodes["-2"];
+                    res.send(formatter(-2));
                 }
             }
         })

@@ -1,4 +1,4 @@
-// const db = require('../index.js');
+const db = require('../index.js');
 const faker = require('faker');
 
 function streamFunc(max, writer, callback, headerline) {

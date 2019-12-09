@@ -3,7 +3,7 @@ const resCodes  = require('../responseCodes.json');
 const formatter = require('../server/responseFormatter.js');
 
 
-function createSub (subName, res, isSeedCall) {
+function createSub (subName, res) {
     let endpointName = subName.split(' ').join('_').toLowerCase();
     let queryString  = `
         INSERT INTO subs (name, endpoint)
@@ -11,6 +11,7 @@ function createSub (subName, res, isSeedCall) {
         CREATE TABLE IF NOT EXISTS ${endpointName} (
         id serial PRIMARY KEY,
         title VARCHAR(140),
+        endpoint VARCHAR(140),
         upvotes INTEGER,
         downvotes INTEGER,
         linkURL VARCHAR(100),
@@ -20,7 +21,6 @@ function createSub (subName, res, isSeedCall) {
     db
         .query(queryString)
         .then(data => {
-            console.log('success');
             if (res) {
                 res.send(formatter(1));
             }
@@ -33,9 +33,6 @@ function createSub (subName, res, isSeedCall) {
                 } else {
                     res.send(formatter(-2));
                 }
-            }
-            if (isSeedCall) {
-                console.log(queryString);
             }
         })
 }
